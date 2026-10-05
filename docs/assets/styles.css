@@ -101,8 +101,8 @@ body {
   background: var(--bg);
   color: var(--ink);
   font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, "Noto Sans Arabic", "Helvetica Neue", sans-serif;
-  font-size: 17px;
-  line-height: 1.65;
+  font-size: 16px;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -370,8 +370,8 @@ html[dir="rtl"] .flip {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  min-height: 52px;
-  padding: 12px 22px;
+  min-height: 50px;
+  padding: 11px 20px;
   overflow: hidden;
   border: 1px solid transparent;
   border-radius: 999px;
@@ -548,28 +548,28 @@ html.js .reveal.in {
 }
 
 .hero h1 {
-  font-size: clamp(2.6rem, 6.4vw, 5.1rem);
+  font-size: clamp(2.3rem, 4.4vw, 3.75rem);
   font-weight: 760;
 }
 
 html[lang="fr"] .hero h1,
 html[lang="es"] .hero h1 {
-  font-size: clamp(2.4rem, 5.2vw, 4.3rem);
+  font-size: clamp(2.1rem, 4vw, 3.3rem);
 }
 
 html[lang="ar"] .hero h1 {
-  font-size: clamp(2.3rem, 5vw, 4.1rem);
+  font-size: clamp(2.1rem, 4vw, 3.4rem);
 }
 
 html[lang="ar"] .doc-hero h1 {
-  font-size: clamp(2.2rem, 4.6vw, 3.7rem);
+  font-size: clamp(1.9rem, 3.6vw, 2.9rem);
 }
 
 .lede {
   max-width: 600px;
   margin-top: 26px;
   color: var(--muted);
-  font-size: clamp(1.08rem, 1.6vw, 1.24rem);
+  font-size: clamp(1rem, 1.2vw, 1.12rem);
 }
 
 .actions {
@@ -688,23 +688,23 @@ html[dir="rtl"] .chip {
    -------------------------------------------------------------------------- */
 
 .section {
-  padding-block: clamp(56px, 9vw, 120px);
+  padding-block: clamp(52px, 7vw, 96px);
 }
 
 .section-head {
-  max-width: 720px;
-  margin-bottom: clamp(32px, 5vw, 56px);
+  max-width: 680px;
+  margin-bottom: clamp(28px, 4vw, 44px);
 }
 
 .section-head h2 {
-  font-size: clamp(2rem, 4.4vw, 3.3rem);
+  font-size: clamp(1.7rem, 3vw, 2.5rem);
   font-weight: 740;
 }
 
 .section-head p {
-  margin-top: 18px;
+  margin-top: 14px;
   color: var(--muted);
-  font-size: 1.12rem;
+  font-size: 1.03rem;
 }
 
 .kicker {
@@ -846,7 +846,7 @@ html.js .reveal.in .p-icon .icon {
 
 .tile h3 {
   margin: 24px 0 10px;
-  font-size: clamp(1.35rem, 2.4vw, 1.75rem);
+  font-size: clamp(1.2rem, 1.8vw, 1.45rem);
 }
 
 .tile p {
@@ -989,7 +989,7 @@ html[dir="rtl"] .tile:hover .go .icon.arrow {
 }
 
 .cta h2 {
-  font-size: clamp(1.8rem, 3.6vw, 2.7rem);
+  font-size: clamp(1.6rem, 2.8vw, 2.2rem);
 }
 
 .cta p {
@@ -1031,7 +1031,7 @@ html[dir="rtl"] .progress {
 }
 
 .doc-hero h1 {
-  font-size: clamp(2.4rem, 5.6vw, 4.4rem);
+  font-size: clamp(2.1rem, 4vw, 3.3rem);
   font-weight: 760;
 }
 
@@ -1192,7 +1192,7 @@ html[dir="rtl"] .toc a.active {
 
 .doc h2 {
   margin-bottom: 18px;
-  font-size: clamp(1.45rem, 2.6vw, 1.9rem);
+  font-size: clamp(1.25rem, 1.9vw, 1.55rem);
   font-weight: 720;
 }
 
@@ -1606,10 +1606,10 @@ html.js [data-words].in .w {
 .notifs {
   position: absolute;
   top: 6.4%;
-  right: 3%;
-  left: 3%;
+  right: 3.5%;
+  left: 3.5%;
   z-index: 3;
-  height: 64px;
+  height: calc(var(--pw) * 0.19);
 }
 
 .notif {
@@ -1617,10 +1617,11 @@ html.js [data-words].in .w {
   inset: 0;
   display: flex;
   align-items: center;
-  gap: 9px;
-  padding: 9px 11px;
-  border-radius: 18px;
-  background: rgba(250, 252, 249, 0.78);
+  gap: 7px;
+  padding: 0 9px;
+  border-radius: calc(var(--pw) * 0.07);
+  background: rgba(250, 252, 249, 0.8);
+  color: #101d16;
   box-shadow: 0 10px 30px -8px rgba(16, 29, 22, 0.35);
   backdrop-filter: blur(16px) saturate(170%);
   -webkit-backdrop-filter: blur(16px) saturate(170%);
@@ -1640,10 +1641,12 @@ html.js [data-words].in .w {
   transition: opacity 0.35s, transform 0.45s var(--ease-in-out);
 }
 
-.notif img {
-  width: 30px;
-  height: 30px;
-  border-radius: 8px;
+.phone-screen .notif img {
+  flex: none;
+  width: calc(var(--pw) * 0.1);
+  height: calc(var(--pw) * 0.1);
+  border-radius: 22%;
+  object-fit: cover;
 }
 
 .notif > div {
@@ -1660,19 +1663,34 @@ html.js [data-words].in .w {
 }
 
 .notif b {
-  font-size: 10.5px;
+  font-size: 9.5px;
+  line-height: 1.25;
 }
 
 .notif small {
   color: #66736b;
-  font-size: 9.5px;
+  font-size: 8.5px;
+  line-height: 1.25;
+}
+
+@media (prefers-color-scheme: dark) {
+  .notif {
+    background: rgba(44, 50, 47, 0.82);
+    color: #f2f5f2;
+    box-shadow: 0 10px 30px -8px rgba(0, 0, 0, 0.6), inset 0 0 0 0.5px rgba(255, 255, 255, 0.12);
+  }
+
+  .notif small,
+  .notif time {
+    color: #a9b3ad;
+  }
 }
 
 .notif time {
-  margin-inline-start: auto;
   align-self: flex-start;
+  margin-top: calc(var(--pw) * 0.035);
   color: #8a958f;
-  font-size: 9px;
+  font-size: 8px;
 }
 
 @supports (animation-timeline: view()) {
@@ -1768,7 +1786,7 @@ html.js [data-words].in .w {
 .manifesto {
   max-width: 980px;
   margin: 0;
-  font-size: clamp(1.9rem, 4.6vw, 3.6rem);
+  font-size: clamp(1.5rem, 3vw, 2.4rem);
   font-weight: 720;
   line-height: 1.18;
   letter-spacing: -0.03em;
@@ -2041,7 +2059,7 @@ html:not(.js) .blocked span::after,
 .stat strong {
   display: flex;
   align-items: flex-end;
-  font-size: clamp(3rem, 6vw, 4.4rem);
+  font-size: clamp(2.4rem, 3.8vw, 3.2rem);
   font-weight: 780;
   line-height: 1;
   letter-spacing: -0.04em;
@@ -2086,7 +2104,7 @@ html.js .stat.reveal:not(.in) .odo-strip {
   display: block;
   margin: 0 auto -0.18em;
   overflow: hidden;
-  font-size: clamp(4.5rem, 19vw, 16rem);
+  font-size: clamp(3.5rem, 13vw, 10rem);
   font-weight: 820;
   line-height: 1;
   letter-spacing: -0.06em;
@@ -2470,8 +2488,8 @@ html[dir="rtl"] .paper-art .paper i {
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  min-height: 60px;
-  padding: 9px 22px 9px 9px;
+  min-height: 54px;
+  padding: 7px 20px 7px 7px;
   overflow: hidden;
   border-radius: 18px;
   background: var(--ink);
@@ -2501,8 +2519,8 @@ html[dir="rtl"] .store-btn {
 }
 
 .store-btn img {
-  width: 42px;
-  height: 42px;
+  width: 38px;
+  height: 38px;
   border-radius: 11px;
   box-shadow: 0 0 0 1px color-mix(in srgb, var(--bg) 18%, transparent);
 }
@@ -2517,7 +2535,7 @@ html[dir="rtl"] .store-btn {
 
 .store-btn b {
   display: block;
-  font-size: 1.22rem;
+  font-size: 1.08rem;
   letter-spacing: -0.01em;
   line-height: 1.15;
 }
@@ -2627,7 +2645,7 @@ html[dir="rtl"] .store-btn {
   --py: 0;
   position: relative;
   display: grid;
-  min-height: clamp(560px, 52vw, 700px);
+  min-height: clamp(520px, 44vw, 600px);
   place-items: center;
   perspective: 1600px;
 }
@@ -2644,7 +2662,7 @@ html[dir="rtl"] .store-btn {
 }
 
 .fan {
-  --pw: clamp(220px, 20vw, 282px);
+  --pw: clamp(200px, 16.5vw, 246px);
   position: relative;
   width: var(--pw);
   transform: rotateY(calc(var(--px) * 12deg)) rotateX(calc(var(--py) * -8deg));
@@ -2702,7 +2720,7 @@ html[dir="rtl"] .store-btn {
 .widget {
   display: grid;
   align-content: space-between;
-  width: 156px;
+  width: 140px;
   aspect-ratio: 1;
   padding: 16px;
   border-radius: 34px;
@@ -2741,7 +2759,7 @@ html[dir="rtl"] .store-btn {
 
 .widget b {
   display: block;
-  font-size: 1.45rem;
+  font-size: 1.3rem;
   letter-spacing: -0.03em;
   line-height: 1.1;
   font-variant-numeric: tabular-nums;
@@ -2767,7 +2785,7 @@ html[dir="rtl"] .store-btn {
 
 .showcase .chip.c1 {
   --d: 1.8s;
-  top: 12%;
+  top: 38%;
   inset-inline-start: auto;
   inset-inline-end: -4%;
 }
@@ -2810,7 +2828,7 @@ html[dir="rtl"] .store-btn {
 
 .step {
   display: flex;
-  min-height: 82vh;
+  min-height: 68vh;
   flex-direction: column;
   justify-content: center;
   opacity: 0.25;
@@ -2854,14 +2872,14 @@ html:not(.js) .step,
 .step h3 {
   max-width: 520px;
   margin-bottom: 16px;
-  font-size: clamp(1.9rem, 3.4vw, 2.9rem);
+  font-size: clamp(1.5rem, 2.4vw, 2rem);
   font-weight: 750;
 }
 
 .step p {
-  max-width: 480px;
+  max-width: 460px;
   color: var(--muted);
-  font-size: 1.12rem;
+  font-size: 1.02rem;
 }
 
 .step ul {
@@ -2939,7 +2957,7 @@ html:not(.js) .step,
 }
 
 .tour-phone {
-  --pw: clamp(240px, 21vw, 300px);
+  --pw: clamp(220px, 18vw, 262px);
 }
 
 .shot {
@@ -2980,7 +2998,7 @@ html:not(.js) .shot:first-child {
 .ring-hero {
   position: relative;
   display: grid;
-  width: min(380px, 100%);
+  width: min(320px, 100%);
   aspect-ratio: 1;
   margin-inline: auto;
   place-items: center;
@@ -3045,7 +3063,7 @@ html:not(.js) .ring-hero .bar,
 .ring-center strong {
   display: block;
   margin: 4px 0;
-  font-size: clamp(2.8rem, 6vw, 4rem);
+  font-size: clamp(2.2rem, 4vw, 3rem);
   font-weight: 780;
   letter-spacing: -0.04em;
   line-height: 1;
@@ -3082,7 +3100,7 @@ html:not(.js) .ring-hero .bar,
 
 .eq-tile b {
   display: block;
-  font-size: 1.6rem;
+  font-size: 1.35rem;
   letter-spacing: -0.02em;
   font-variant-numeric: tabular-nums;
 }
@@ -3128,7 +3146,7 @@ html.js .in .equation > * {
 }
 
 .daily h2 {
-  font-size: clamp(2rem, 4.4vw, 3.3rem);
+  font-size: clamp(1.7rem, 3vw, 2.5rem);
   font-weight: 740;
 }
 
@@ -3165,7 +3183,7 @@ html.js .in .equation > * {
 }
 
 .lock .time {
-  font-size: 4rem;
+  font-size: 3.4rem;
   font-weight: 700;
   letter-spacing: -0.04em;
   line-height: 1;
@@ -3251,7 +3269,7 @@ html.js .in .equation > * {
 }
 
 .plan h3 {
-  font-size: 1.6rem;
+  font-size: 1.35rem;
 }
 
 .plan .plan-sub {
@@ -3365,14 +3383,14 @@ html[dir="rtl"] .plan .tag {
 }
 
 .download h2 {
-  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-size: clamp(1.8rem, 3.4vw, 2.6rem);
   font-weight: 780;
 }
 
 .download p {
-  margin: 14px 0 26px;
+  margin: 12px 0 24px;
   color: rgba(238, 245, 238, 0.78);
-  font-size: 1.12rem;
+  font-size: 1.03rem;
 }
 
 .download .langs {
@@ -3381,7 +3399,7 @@ html[dir="rtl"] .plan .tag {
 
 .big-icon {
   position: relative;
-  width: clamp(120px, 14vw, 180px);
+  width: clamp(110px, 11vw, 150px);
   aspect-ratio: 1;
   overflow: hidden;
   border-radius: 23%;
@@ -3417,8 +3435,8 @@ html[dir="rtl"] .plan .tag {
 }
 
 .qr svg {
-  width: 150px;
-  height: 150px;
+  width: 132px;
+  height: 132px;
 }
 
 .qr small {
@@ -3627,23 +3645,28 @@ html[dir="rtl"] .plan .tag {
   .fan .p-right { transform: translateX(44%) translateZ(-160px) rotateY(-24deg) rotateZ(3deg); }
 
   .showcase .widget {
-    width: 128px;
-    padding: 13px;
-    border-radius: 28px;
+    width: 108px;
+    padding: 11px;
+    border-radius: 24px;
     inset-inline-start: 0;
+    bottom: 6%;
   }
 
   .showcase .widget .ring {
-    width: 42px;
-    height: 42px;
+    width: 34px;
+    height: 34px;
   }
 
   .showcase .widget b {
-    font-size: 1.15rem;
+    font-size: 1rem;
+  }
+
+  .showcase .widget small {
+    font-size: 0.62rem;
   }
 
   .showcase .chip.c1 {
-    inset-inline-end: 0;
+    display: none;
   }
 
   .store-btn {
