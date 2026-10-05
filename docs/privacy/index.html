@@ -2,186 +2,241 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>SpendCue Privacy Policy</title>
     <meta name="description" content="Privacy Policy for SpendCue, a local-first personal finance tracker for iPhone.">
+    <meta name="theme-color" content="#f6f8f4" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0b1510" media="(prefers-color-scheme: dark)">
     <link rel="canonical" href="https://mahmoudfotta.github.io/SpendCuePrivacy/privacy/">
     <link rel="alternate" hreflang="en" href="https://mahmoudfotta.github.io/SpendCuePrivacy/privacy/">
     <link rel="alternate" hreflang="ar" href="https://mahmoudfotta.github.io/SpendCuePrivacy/ar/privacy/">
     <link rel="alternate" hreflang="x-default" href="https://mahmoudfotta.github.io/SpendCuePrivacy/privacy/">
+    <link rel="icon" type="image/png" href="../assets/icon.png">
+    <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png">
     <link rel="stylesheet" href="../assets/styles.css">
+    <script>document.documentElement.classList.add("js")</script>
+    <script src="../assets/site.js" defer></script>
   </head>
   <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="progress" aria-hidden="true"></div>
+    <div class="backdrop" aria-hidden="true"><span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span></div>
+
     <header class="site-header">
-      <a class="brand" href="../" aria-label="SpendCue home">
-        <span class="brand-mark">S</span>
-        <span>SpendCue</span>
-      </a>
-      <nav class="nav" aria-label="Primary navigation">
-        <a href="../privacy/">Privacy Policy</a>
-        <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms of Use</a>
-        <a href="../ar/privacy/" lang="ar">العربية</a>
-      </nav>
+      <div class="wrap">
+        <a class="brand" href="../" aria-label="SpendCue home">
+          <img src="../assets/icon.png" alt="" width="36" height="36">
+          <span>SpendCue</span>
+        </a>
+        <nav class="nav" aria-label="Primary navigation">
+          <a href="../privacy/" aria-current="page">Privacy</a>
+          <a href="../terms/">Terms</a>
+          <a class="lang" href="../ar/privacy/" lang="ar" hreflang="ar">العربية</a>
+        </nav>
+      </div>
     </header>
 
-    <main>
-      <section class="hero">
-        <p class="eyebrow">Privacy Policy</p>
-        <h1>SpendCue keeps your personal finance data private by default.</h1>
-        <p class="lede">
-          This policy explains how SpendCue handles the information you enter into the app, including local storage, iCloud sync, notifications, purchases, CSV files, and AI insights.
-        </p>
-        <p class="meta">Effective date: May 13, 2026</p>
+    <main id="main">
+      <section class="wrap doc-hero has-art">
+        <div class="hero-copy">
+          <p class="eyebrow rise"><span class="pulse" aria-hidden="true"></span>Privacy Policy</p>
+          <h1 data-split>SpendCue keeps your personal finance data <span class="hl">private by default.</span></h1>
+          <p class="lede rise" style="--d: 450ms">
+            This policy explains how SpendCue handles the information you enter into the app, including local storage, iCloud sync, notifications, purchases, CSV files, and AI insights.
+          </p>
+          <div class="meta-row rise" style="--d: 600ms">
+            <span class="meta-chip"><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#calendar"/></svg>Effective date: September 27, 2026</span>
+            <span class="meta-chip"><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#clock"/></svg>3 min read</span>
+          </div>
+        </div>
+        <div class="art orbit" aria-hidden="true">
+          <span class="ring r1"></span><span class="ring r2"></span><span class="ring r3"></span>
+          <span class="wave"></span><span class="wave"></span><span class="wave"></span>
+          <span class="orbiter" style="--start: 0s"><span><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#phone"/></svg></span></span>
+          <span class="orbiter" style="--start: -7.3s"><span><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#cloud"/></svg></span></span>
+          <span class="orbiter" style="--start: -14.6s"><span><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#faceid"/></svg></span></span>
+          <span class="orbiter inner" style="--start: -4s"><span><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#sparkles"/></svg></span></span>
+          <span class="orbiter inner muted" style="--start: -12s"><span><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#eye-off"/></svg></span></span>
+          <span class="core"><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#lock"/></svg></span>
+        </div>
       </section>
 
-      <div class="content-grid">
-        <aside class="summary" aria-label="Policy sections">
-          <h2>Sections</h2>
-          <ul>
-            <li><a href="#summary">Summary</a></li>
-            <li><a href="#information">Information handled by the app</a></li>
-            <li><a href="#storage">Storage and iCloud sync</a></li>
-            <li><a href="#notifications">Notifications and biometrics</a></li>
-            <li><a href="#purchases">Purchases</a></li>
-            <li><a href="#ai">AI insights</a></li>
-            <li><a href="#sharing">Sharing and exports</a></li>
-            <li><a href="#deletion">Deleting data</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </aside>
+      <div class="wrap">
+        <div class="glance" data-stagger>
+          <div class="glance-item reveal"><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#lock"/></svg><span>Records stay on your device</span></div>
+          <div class="glance-item reveal"><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#user-off"/></svg><span>No developer account required</span></div>
+          <div class="glance-item reveal"><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#eye-off"/></svg><span>No ads or tracking SDKs</span></div>
+          <div class="glance-item reveal"><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#card"/></svg><span>Purchases processed by Apple</span></div>
+        </div>
 
-        <article class="policy">
-          <section id="summary">
-            <h2>Summary</h2>
-            <p>
-              SpendCue is a local-first personal finance tracker developed by Mahmoud Gamal. The app is designed so the developer does not collect, sell, rent, or track your personal finance records.
-            </p>
-            <div class="callout">
-              <p>
-                Your transactions, budgets, subscriptions, goals, debts, categories, accounts, preferences, and insight inputs are stored on your device and may sync through your private iCloud account when iCloud is available.
-              </p>
+        <div class="doc-layout">
+          <nav class="toc" aria-label="On this page">
+            <p class="toc-title">On this page</p>
+            <div class="toc-rail">
+              <span class="toc-indicator" aria-hidden="true"></span>
+              <ol>
+                <li><a href="#summary">Summary</a></li>
+                <li><a href="#information">Information handled by the app</a></li>
+                <li><a href="#storage">Storage and iCloud sync</a></li>
+                <li><a href="#notifications">Notifications and biometrics</a></li>
+                <li><a href="#purchases">Purchases</a></li>
+                <li><a href="#ai">AI insights</a></li>
+                <li><a href="#sharing">Sharing and exports</a></li>
+                <li><a href="#third-parties">Third-party services</a></li>
+                <li><a href="#children">Children’s privacy</a></li>
+                <li><a href="#deletion">Deleting data</a></li>
+                <li><a href="#changes">Changes to this policy</a></li>
+                <li><a href="#contact">Contact</a></li>
+              </ol>
             </div>
-            <ul>
-              <li>No developer-operated account is required.</li>
-              <li>No ads or third-party tracking SDKs are included.</li>
-              <li>No developer-operated analytics backend receives your finance records.</li>
-              <li>Premium purchases are processed by Apple through the App Store.</li>
-            </ul>
-          </section>
+          </nav>
 
-          <section id="information">
-            <h2>Information Handled By The App</h2>
-            <p>
-              SpendCue stores information that you choose to enter or import, such as transaction amounts, dates, currencies, categories, accounts, merchants, notes, tags, recurring rules, subscriptions, budgets, savings goals, debt accounts, and debt payments.
-            </p>
-            <p>
-              The app also stores app preferences such as currency, month start day, theme, onboarding state, notification settings, biometric lock preference, premium entitlement state, and local category suggestion history.
-            </p>
-            <p>
-              SpendCue does not ask you to create a developer account and does not require bank connection credentials.
-            </p>
-          </section>
+          <article class="doc">
+            <section id="summary" class="reveal">
+              <h2><span>Summary</span><a class="anchor" href="#summary" aria-label="Link to this section">#</a></h2>
+              <p>
+                SpendCue is a local-first personal finance tracker developed by Mahmoud Gamal. The app is designed so the developer does not collect, sell, rent, or track your personal finance records.
+              </p>
+              <div class="callout">
+                <p>
+                  Your transactions, budgets, subscriptions, goals, debts, categories, accounts, preferences, and insight inputs are stored on your device and may sync through your private iCloud account when iCloud is available.
+                </p>
+              </div>
+              <ul>
+                <li>No developer-operated account is required.</li>
+                <li>No ads or third-party tracking SDKs are included.</li>
+                <li>No developer-operated analytics backend receives your finance records.</li>
+                <li>Premium purchases are processed by Apple through the App Store.</li>
+              </ul>
+            </section>
 
-          <section id="storage">
-            <h2>Storage And iCloud Sync</h2>
-            <p>
-              SpendCue stores app data locally on your device using Apple's app storage technologies. When iCloud is available for the app, records may sync through your private iCloud account using Apple's CloudKit infrastructure.
-            </p>
-            <p>
-              iCloud sync is controlled by your Apple ID, iCloud settings, device settings, and Apple's systems. The developer does not operate a separate cloud database for your SpendCue records and does not have access to your private iCloud data.
-            </p>
-            <p>
-              Apple may process iCloud data according to Apple's own terms and privacy practices.
-            </p>
-          </section>
+            <section id="information" class="reveal">
+              <h2><span>Information Handled By The App</span><a class="anchor" href="#information" aria-label="Link to this section">#</a></h2>
+              <p>
+                SpendCue stores information that you choose to enter or import, such as transaction amounts, dates, currencies, categories, accounts, merchants, notes, tags, recurring rules, subscriptions, budgets, savings goals, debt accounts, and debt payments.
+              </p>
+              <p>
+                The app also stores app preferences such as currency, month start day, theme, onboarding state, notification settings, biometric lock preference, premium entitlement state, and local category suggestion history.
+              </p>
+              <p>
+                SpendCue does not ask you to create a developer account and does not require bank connection credentials.
+              </p>
+            </section>
 
-          <section id="notifications">
-            <h2>Notifications And Biometrics</h2>
-            <p>
-              If you enable reminders, SpendCue may ask iOS for notification permission and schedule local notifications for items such as upcoming subscriptions. Notification content is handled by iOS on your device.
-            </p>
-            <p>
-              If you enable biometric lock, SpendCue uses Apple's LocalAuthentication framework to unlock the app with Face ID, Touch ID, or device passcode. The app does not receive or store your biometric data.
-            </p>
-          </section>
+            <section id="storage" class="reveal">
+              <h2><span>Storage And iCloud Sync</span><a class="anchor" href="#storage" aria-label="Link to this section">#</a></h2>
+              <p>
+                SpendCue stores app data locally on your device using Apple's app storage technologies. When iCloud is available for the app, records may sync through your private iCloud account using Apple's CloudKit infrastructure.
+              </p>
+              <p>
+                iCloud sync is controlled by your Apple ID, iCloud settings, device settings, and Apple's systems. The developer does not operate a separate cloud database for your SpendCue records and does not have access to your private iCloud data.
+              </p>
+              <p>
+                Apple may process iCloud data according to Apple's own terms and privacy practices.
+              </p>
+            </section>
 
-          <section id="purchases">
-            <h2>Purchases</h2>
-            <p>
-              SpendCue offers optional premium purchases and subscriptions. Purchases, billing, renewals, refunds, and entitlement verification are handled by Apple through the App Store and StoreKit.
-            </p>
-            <p>
-              The app may store your premium entitlement status locally so premium features can be unlocked in the app. The developer does not receive your full payment card details from Apple.
-            </p>
-          </section>
+            <section id="notifications" class="reveal">
+              <h2><span>Notifications And Biometrics</span><a class="anchor" href="#notifications" aria-label="Link to this section">#</a></h2>
+              <p>
+                If you enable reminders, SpendCue may ask iOS for notification permission and schedule local notifications for items such as upcoming subscriptions. Notification content is handled by iOS on your device.
+              </p>
+              <p>
+                If you enable biometric lock, SpendCue uses Apple's LocalAuthentication framework to unlock the app with Face ID, Touch ID, or device passcode. The app does not receive or store your biometric data.
+              </p>
+            </section>
 
-          <section id="ai">
-            <h2>AI Insights</h2>
-            <p>
-              SpendCue includes insight and assistant features that summarize local finance facts, identify possible duplicates, flag unusual activity, and highlight budget risks. These features are informational only and are not financial, legal, tax, or investment advice.
-            </p>
-            <p>
-              Where available, AI responses are designed to use Apple's on-device system language model and local app context. SpendCue does not send your finance records to a developer-operated AI server.
-            </p>
-          </section>
+            <section id="purchases" class="reveal">
+              <h2><span>Purchases</span><a class="anchor" href="#purchases" aria-label="Link to this section">#</a></h2>
+              <p>
+                SpendCue offers optional Premium subscriptions and a one-time Lifetime purchase. Apple handles purchases, billing, renewals, refunds, and purchase verification through the App Store and StoreKit.
+              </p>
+              <p>
+                The app may store verified Premium access status locally so your purchased features remain available. The developer does not receive your full payment card details from Apple. Your entered spending transactions, budgets, debts, account balances, and receipt images are separate from App Store purchase records.
+              </p>
+            </section>
 
-          <section id="sharing">
-            <h2>Sharing, Import, And Export</h2>
-            <p>
-              SpendCue can import and export CSV files when you choose to use those features. Exported CSV files may contain personal finance information. You control where exported files are saved or shared.
-            </p>
-            <p>
-              If you share exported files with another app, cloud drive, person, or service, that destination's privacy practices apply.
-            </p>
-          </section>
+            <section id="ai" class="reveal">
+              <h2><span>AI Insights</span><a class="anchor" href="#ai" aria-label="Link to this section">#</a></h2>
+              <p>
+                SpendCue includes insight and assistant features that summarize local finance facts, identify possible duplicates, flag unusual activity, and highlight budget risks. These features are informational only and are not financial, legal, tax, or investment advice.
+              </p>
+              <p>
+                Where available, AI responses are designed to use Apple's on-device system language model and local app context. SpendCue does not send your finance records to a developer-operated AI server.
+              </p>
+            </section>
 
-          <section id="third-parties">
-            <h2>Third-Party Services</h2>
-            <p>
-              SpendCue relies on Apple services for iCloud sync, App Store purchases, notifications, biometric authentication, and operating-system features. The app does not include advertising SDKs or third-party tracking SDKs.
-            </p>
-          </section>
+            <section id="sharing" class="reveal">
+              <h2><span>Sharing, Import, And Export</span><a class="anchor" href="#sharing" aria-label="Link to this section">#</a></h2>
+              <p>
+                SpendCue can import and export CSV files when you choose to use those features. Exported CSV files may contain personal finance information. You control where exported files are saved or shared.
+              </p>
+              <p>
+                If you share exported files with another app, cloud drive, person, or service, that destination's privacy practices apply.
+              </p>
+            </section>
 
-          <section id="children">
-            <h2>Children's Privacy</h2>
-            <p>
-              SpendCue is not directed to children under 13, and the developer does not knowingly collect personal information from children.
-            </p>
-          </section>
+            <section id="third-parties" class="reveal">
+              <h2><span>Third-Party Services</span><a class="anchor" href="#third-parties" aria-label="Link to this section">#</a></h2>
+              <p>
+                SpendCue relies on Apple services for iCloud sync, App Store purchases, notifications, biometric authentication, and operating-system features. The app does not include advertising SDKs or cross-app advertising tracking.
+              </p>
+            </section>
 
-          <section id="deletion">
-            <h2>Deleting Your Data</h2>
-            <p>
-              You can delete records inside SpendCue where editing and deletion controls are available. You can also remove the app from your device to delete local app data stored on that device.
-            </p>
-            <p>
-              If SpendCue data has synced through iCloud, you may also need to manage or delete the app's iCloud data from your device's iCloud storage settings.
-            </p>
-          </section>
+            <section id="children" class="reveal">
+              <h2><span>Children's Privacy</span><a class="anchor" href="#children" aria-label="Link to this section">#</a></h2>
+              <p>
+                SpendCue is not directed to children under 13, and the developer does not knowingly collect personal information from children.
+              </p>
+            </section>
 
-          <section id="changes">
-            <h2>Changes To This Policy</h2>
-            <p>
-              This policy may be updated when SpendCue changes its data handling, features, or support channels. Updates will be posted on this page with a new effective date.
-            </p>
-          </section>
+            <section id="deletion" class="reveal">
+              <h2><span>Deleting Your Data</span><a class="anchor" href="#deletion" aria-label="Link to this section">#</a></h2>
+              <p>
+                You can delete records inside SpendCue where editing and deletion controls are available. You can also remove the app from your device to delete local app data stored on that device.
+              </p>
+              <p>
+                If SpendCue data has synced through iCloud, you may also need to manage or delete the app's iCloud data from your device's iCloud storage settings.
+              </p>
+              <p>
+                Removing the app does not cancel an Apple subscription or automatically erase purchase records held by Apple. Manage subscription renewal and purchase history in your Apple Account. Contact Apple for questions about App Store purchase records or refunds.
+              </p>
+            </section>
 
-          <section id="contact">
-            <h2>Contact</h2>
-            <p>
-              For privacy questions or app support, contact the developer at spendcueapp@gmail.com.
-            </p>
-            <p>
-              Support: <a href="mailto:spendcueapp@gmail.com">spendcueapp@gmail.com</a>
-            </p>
-          </section>
-        </article>
+            <section id="changes" class="reveal">
+              <h2><span>Changes To This Policy</span><a class="anchor" href="#changes" aria-label="Link to this section">#</a></h2>
+              <p>
+                This policy may be updated when SpendCue changes its data handling, features, or support channels. Updates will be posted on this page with a new effective date.
+              </p>
+            </section>
+
+            <section id="contact" class="reveal">
+              <h2><span>Contact</span><a class="anchor" href="#contact" aria-label="Link to this section">#</a></h2>
+              <p>
+                For privacy questions or app support, contact the developer at spendcueapp@gmail.com. If you contact support, we receive the email address and information you choose to provide to respond to your request. Do not send payment-card details or private financial records.
+              </p>
+              <p>
+                Support: <a href="mailto:spendcueapp@gmail.com">spendcueapp@gmail.com</a>
+              </p>
+            </section>
+          </article>
+        </div>
       </div>
     </main>
 
     <footer class="site-footer">
-      <span>&copy; 2026 Mahmoud Gamal. All rights reserved.</span>
-      <span><a href="../">Support</a></span>
+      <span class="footer-mark reveal" aria-hidden="true" data-letters>SpendCue</span>
+      <div class="wrap">
+        <span>&copy; 2026 Mahmoud Gamal. All rights reserved.</span>
+        <nav class="foot-links" aria-label="Footer">
+          <a href="../privacy/">Privacy Policy</a>
+          <a href="../terms/">Terms of Use</a>
+          <a href="../">Support</a>
+          <a href="../ar/privacy/" lang="ar" hreflang="ar">العربية</a>
+        </nav>
+      </div>
     </footer>
+
+    <button class="to-top" type="button" aria-label="Back to top"><svg class="icon" aria-hidden="true"><use href="../assets/icons.svg#arrow-up"/></svg></button>
   </body>
 </html>

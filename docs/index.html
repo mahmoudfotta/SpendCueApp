@@ -2,63 +2,243 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>SpendCue Support</title>
     <meta name="description" content="Support and privacy information for SpendCue, a private personal finance tracker for iPhone.">
+    <meta name="theme-color" content="#f6f8f4" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#0b1510" media="(prefers-color-scheme: dark)">
     <link rel="canonical" href="https://mahmoudfotta.github.io/SpendCuePrivacy/">
     <link rel="alternate" hreflang="en" href="https://mahmoudfotta.github.io/SpendCuePrivacy/">
     <link rel="alternate" hreflang="ar" href="https://mahmoudfotta.github.io/SpendCuePrivacy/ar/">
     <link rel="alternate" hreflang="x-default" href="https://mahmoudfotta.github.io/SpendCuePrivacy/">
+    <link rel="icon" type="image/png" href="./assets/icon.png">
+    <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png">
     <link rel="stylesheet" href="./assets/styles.css">
+    <script>document.documentElement.classList.add("js")</script>
+    <script src="./assets/site.js" defer></script>
   </head>
   <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="backdrop" aria-hidden="true"><span class="blob b1"></span><span class="blob b2"></span><span class="blob b3"></span></div>
+
     <header class="site-header">
-      <a class="brand" href="./" aria-label="SpendCue home">
-        <span class="brand-mark">S</span>
-        <span>SpendCue</span>
-      </a>
-      <nav class="nav" aria-label="Primary navigation">
-        <a href="./privacy/">Privacy Policy</a>
-        <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms of Use</a>
-        <a href="./ar/" lang="ar">العربية</a>
-      </nav>
+      <div class="wrap">
+        <a class="brand" href="./" aria-label="SpendCue home">
+          <img src="./assets/icon.png" alt="" width="36" height="36">
+          <span>SpendCue</span>
+        </a>
+        <nav class="nav" aria-label="Primary navigation">
+          <a href="./privacy/">Privacy</a>
+          <a href="./terms/">Terms</a>
+          <a class="lang" href="./ar/" lang="ar" hreflang="ar">العربية</a>
+        </nav>
+      </div>
     </header>
 
-    <main>
-      <section class="hero">
-        <p class="eyebrow">Support</p>
-        <h1>Private money tracking for budgets, bills, goals, and debt.</h1>
-        <p class="lede">
-          SpendCue is a local-first personal finance app. Your records stay on your device and can sync through your private iCloud account when iCloud is available.
-        </p>
-        <div class="actions">
-          <a class="button" href="./privacy/">Read Privacy Policy</a>
-          <a class="button secondary" href="mailto:spendcueapp@gmail.com">Contact Support</a>
+    <main id="main">
+      <section class="wrap hero">
+        <div class="hero-copy">
+          <p class="eyebrow rise" style="--d: 0ms"><span class="pulse" aria-hidden="true"></span>Support &amp; Privacy</p>
+          <h1 data-split><span class="sr-only">Private money tracking for budgets, bills, goals, and debt.</span><span aria-hidden="true">Private money tracking for <span class="rotator"><span class="hl on">budgets.</span><span class="hl">bills.</span><span class="hl">goals.</span><span class="hl">debt.</span><span class="hl">subscriptions.</span></span></span></h1>
+          <p class="lede rise" style="--d: 450ms">
+            SpendCue is a local-first personal finance app. Your records stay on your device and can sync through your private iCloud account when iCloud is available.
+          </p>
+          <div class="actions rise" style="--d: 600ms">
+            <a class="btn magnetic" href="./privacy/">Read Privacy Policy <svg class="icon arrow" aria-hidden="true"><use href="./assets/icons.svg#arrow"/></svg></a>
+            <a class="btn ghost magnetic" href="mailto:spendcueapp@gmail.com"><svg class="icon" aria-hidden="true"><use href="./assets/icons.svg#mail"/></svg> Contact Support</a>
+          </div>
+          <div class="trust-line rise" style="--d: 750ms">
+            <span><svg class="icon" aria-hidden="true"><use href="./assets/icons.svg#check"/></svg>No account</span>
+            <span><svg class="icon" aria-hidden="true"><use href="./assets/icons.svg#check"/></svg>No ads</span>
+            <span><svg class="icon" aria-hidden="true"><use href="./assets/icons.svg#check"/></svg>No tracking SDKs</span>
+          </div>
+        </div>
+
+        <div class="stage" aria-hidden="true">
+          <div class="device-wrap">
+            <div class="device-float">
+              <div class="device">
+                <div class="screen">
+                  <div class="status-bar"><span>9:41</span><i></i></div>
+                  <div class="notifs">
+                    <div class="notif"><img src="./assets/icon.png" alt=""><div><b>Netflix renews tomorrow</b><small>$15.49 · Subscriptions</small></div><time>now</time></div>
+                    <div class="notif"><img src="./assets/icon.png" alt=""><div><b>Groceries budget at 80%</b><small>$320 of $400 this month</small></div><time>now</time></div>
+                    <div class="notif"><img src="./assets/icon.png" alt=""><div><b>Weekly review is ready</b><small>You spent 12% less than last week</small></div><time>now</time></div>
+                  </div>
+                  <div class="app">
+                    <div class="app-top"><span class="app-pill">Personal ▾</span><span class="app-pill">Settings ＋</span></div>
+                    <p class="app-title">Home</p>
+                    <div class="w-card" style="--d: 700ms">
+                      <div class="w-label">Estimated available until payday</div>
+                      <div class="w-sub">Oct 26, 2026</div>
+                      <div class="w-big" data-count="3576" data-prefix="$" data-delay="900">$3,576</div>
+                      <div class="w-row"><span>Daily guide</span><b>$127.71</b></div>
+                      <div class="w-track"><b></b></div>
+                    </div>
+                    <div class="w-card w-review" style="--d: 850ms">
+                      <span class="ico"><svg class="icon" width="16" height="16"><use href="./assets/icons.svg#calendar"/></svg></span>
+                      <div><div class="w-label">Your weekly review is ready</div><div class="w-sub">Sep 20 – Sep 26</div></div>
+                    </div>
+                    <div class="w-card w-flow" style="--d: 1000ms">
+                      <div class="w-row"><span class="w-sub">September 2026</span><span class="badge">● Positive</span></div>
+                      <div class="w-label">Net Cashflow</div>
+                      <div class="w-big" data-count="4132" data-prefix="$" data-delay="1100">$4,132</div>
+                      <svg class="spark" viewBox="0 0 200 80" preserveAspectRatio="none">
+                        <path class="area" d="M0 70 C30 64 40 52 62 54 S100 30 122 36 160 14 200 8 V80 H0Z"/>
+                        <path pathLength="1" d="M0 70 C30 64 40 52 62 54 S100 30 122 36 160 14 200 8"/>
+                      </svg>
+                    </div>
+                    <div class="mini-grid">
+                      <div class="w-card" style="--d: 1150ms"><span class="dot in">↓</span><div class="w-sub">Income</div><b>$6,200</b></div>
+                      <div class="w-card" style="--d: 1250ms"><span class="dot out">↑</span><div class="w-sub">Spent</div><b>$2,068</b></div>
+                    </div>
+                  </div>
+                  <div class="tabbar">
+                    <span class="on"><svg><use href="./assets/icons.svg#home"/></svg>Home</span>
+                    <span><svg><use href="./assets/icons.svg#list"/></svg>Transactions</span>
+                    <span><svg><use href="./assets/icons.svg#plan"/></svg>Plan</span>
+                    <span><svg><use href="./assets/icons.svg#bars"/></svg>Insights</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="chip c1"><span class="ci"><svg class="icon"><use href="./assets/icons.svg#lock"/></svg></span><span>Stored on your device<small>Local-first by design</small></span></div>
+          <div class="chip c2"><span class="ci"><svg class="icon"><use href="./assets/icons.svg#cloud"/></svg></span><span>Private iCloud sync<small>Your Apple account only</small></span></div>
+          <div class="chip c3"><span class="ci"><svg class="icon"><use href="./assets/icons.svg#sparkles"/></svg></span><span>On-device insights<small>No developer AI server</small></span></div>
         </div>
       </section>
 
-      <section class="cards" aria-label="Support links">
-        <article class="card">
-          <h2>Privacy</h2>
-          <p>Review how SpendCue handles local finance records, iCloud sync, notifications, purchases, and AI insights.</p>
-          <a href="./privacy/">Open privacy policy</a>
-        </article>
-        <article class="card">
-          <h2>Terms</h2>
-          <p>SpendCue uses Apple's standard end user license agreement unless a custom EULA is added later.</p>
-          <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">View Apple EULA</a>
-        </article>
-        <article class="card">
-          <h2>Help</h2>
-          <p>For app support or privacy questions, email the developer at spendcueapp@gmail.com.</p>
-          <a href="mailto:spendcueapp@gmail.com">Email support</a>
-        </article>
+      <div class="marquee" role="region" aria-label="Features">
+        <div class="marquee-track"><div class="marquee-set" style="display:contents"><span class="pill"><svg class="icon" aria-hidden="true"><use href="./assets/icons.svg#wallet"/></svg>Budgets</span><span class="pill"><svg class="icon" aria-hidden="true"><use href="./assets/icons.svg#calendar"/></svg>Subscriptions</span><span class="pill"><svg class="icon" aria-hidden="true"><use href="./assets/icons.svg#target"/></svg>Savings goals</span><span class="pill"><svg class="icon" aria-hidden="true"><use href="./assets/icons.svg#card"/></svg>Debt tools</span><span class="pill"><svg class="icon" aria-hidden="true"><use href="./assets/icons.svg#repeat"/></svg>Recurring transactions</span><span class="pill"><svg class="icon" aria-hidden="true"><use href="./assets/icons.svg#plan"/></svg>Paycheck plan</span><span class="pill"><svg class="icon" aria-hidden="true"><use href="./assets/icons.svg#chart"/></svg>Weekly review</span></div><div aria-hidden="true" style="display:contents"><span class="pill"><svg class="icon" aria-hidden="true"><use href="./assets/icons.svg#wallet"/></svg>Budgets</span><span class="pill"><svg class="icon" aria-hidden="true"><use href="./assets/icons.svg#calendar"/></svg>Subscriptions</span><span class="pill"><svg class="icon" aria-hidden="true"><use href="./assets/icons.svg#target"/></svg>Savings goals</span><span class="pill"><svg class="icon" aria-hidden="true"><use href="./assets/icons.svg#card"/></svg>Debt tools</span><span class="pill"><svg class="icon" aria-hidden="true"><use href="./assets/icons.svg#repeat"/></svg>Recurring transactions</span><span class="pill"><svg class="icon" aria-hidden="true"><use href="./assets/icons.svg#plan"/></svg>Paycheck plan</span><span class="pill"><svg class="icon" aria-hidden="true"><use href="./assets/icons.svg#chart"/></svg>Weekly review</span></div></div>
+        <div class="marquee-track reverse"><div class="marquee-set" style="display:contents"><span class="pill"><svg class="icon" aria-hidden="true"><use href="./assets/icons.svg#file"/></svg>CSV import &amp; export</span><span class="pill"><svg class="icon" aria-hidden="true"><use href="./assets/icons.svg#faceid"/></svg>Face ID lock</span><span class="pill"><svg class="icon" aria-hidden="true"><use href="./assets/icons.svg#cloud"/></svg>iCloud sync</span><span class="pill"><svg class="icon" aria-hidden="true"><use href="./assets/icons.svg#sparkles"/></svg>On-device insights</span><span class="pill"><svg class="icon" aria-hidden="true"><use href="./assets/icons.svg#grid"/></svg>Home Screen widgets</span><span class="pill"><svg class="icon" aria-hidden="true"><use href="./assets/icons.svg#pie"/></svg>Multiple lists</span><span class="pill"><svg class="icon" aria-hidden="true"><use href="./assets/icons.svg#wallet"/></svg>Budgets</span></div><div aria-hidden="true" style="display:contents"><span class="pill"><svg class="icon" aria-hidden="true"><use href="./assets/icons.svg#file"/></svg>CSV import &amp; export</span><span class="pill"><svg class="icon" aria-hidden="true"><use href="./assets/icons.svg#faceid"/></svg>Face ID lock</span><span class="pill"><svg class="icon" aria-hidden="true"><use href="./assets/icons.svg#cloud"/></svg>iCloud sync</span><span class="pill"><svg class="icon" aria-hidden="true"><use href="./assets/icons.svg#sparkles"/></svg>On-device insights</span><span class="pill"><svg class="icon" aria-hidden="true"><use href="./assets/icons.svg#grid"/></svg>Home Screen widgets</span><span class="pill"><svg class="icon" aria-hidden="true"><use href="./assets/icons.svg#pie"/></svg>Multiple lists</span><span class="pill"><svg class="icon" aria-hidden="true"><use href="./assets/icons.svg#wallet"/></svg>Budgets</span></div></div>
+      </div>
+
+      <section class="wrap section">
+        <p class="manifesto" data-scrub>No accounts to create. No ads. No trackers. Just <span class="key">your money, on your device,</span> synced through <span class="key">your own iCloud.</span></p>
+      </section>
+
+      <section class="wrap section" aria-labelledby="promises-title" style="padding-top: 0">
+        <div class="section-head reveal">
+          <span class="kicker">Privacy by design</span>
+          <h2 id="promises-title" data-words>Your finances are nobody else’s business.</h2>
+          <p>SpendCue is built so the developer never collects, sells, rents, or tracks your personal finance records.</p>
+        </div>
+        <div class="promises tilt-group" data-stagger>
+          <article class="promise reveal tilt glow-border">
+            <span class="p-icon"><svg class="icon" aria-hidden="true"><use href="./assets/icons.svg#user-off"/></svg></span>
+            <h3>No account needed</h3>
+            <p>No developer sign-up and no bank connection credentials.</p>
+          </article>
+          <article class="promise reveal tilt glow-border">
+            <span class="p-icon"><svg class="icon" aria-hidden="true"><use href="./assets/icons.svg#eye-off"/></svg></span>
+            <h3>No ads or trackers</h3>
+            <p>No advertising SDKs and no cross-app advertising tracking.</p>
+          </article>
+          <article class="promise reveal tilt glow-border">
+            <span class="p-icon"><svg class="icon" aria-hidden="true"><use href="./assets/icons.svg#sparkles"/></svg></span>
+            <h3>On-device intelligence</h3>
+            <p>Insights use Apple’s on-device language model where available.</p>
+          </article>
+          <article class="promise reveal tilt glow-border">
+            <span class="p-icon"><svg class="icon" aria-hidden="true"><use href="./assets/icons.svg#card"/></svg></span>
+            <h3>Apple handles payments</h3>
+            <p>Billing, renewals, and refunds run through the App Store.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="wrap section" aria-labelledby="flow-title" style="padding-top: 0">
+        <div class="section-head reveal">
+          <span class="kicker">Where your data goes</span>
+          <h2 id="flow-title" data-words>Your records make one trip: between your devices.</h2>
+          <p>Finance records live on your iPhone and sync only through your private iCloud account. They are not sent to developer servers, ad networks, or analytics backends.</p>
+        </div>
+        <div class="flow reveal">
+          <div class="node phone"><span class="n-icon"><svg class="icon" aria-hidden="true"><use href="./assets/icons.svg#phone"/></svg></span><b>Your iPhone</b><small>Stored locally on device</small></div>
+          <div class="wire" aria-hidden="true"><span></span><span></span><em>Private sync</em></div>
+          <div class="node cloud"><span class="n-icon"><svg class="icon" aria-hidden="true"><use href="./assets/icons.svg#cloud"/></svg></span><b>Your private iCloud</b><small>Synced with your Apple account</small></div>
+          <div class="drop" aria-hidden="true"><span class="barrier"><svg class="icon" aria-hidden="true"><use href="./assets/icons.svg#x"/></svg></span></div>
+          <div class="blocked">
+            <div style="--i: 0"><svg class="icon" aria-hidden="true"><use href="./assets/icons.svg#server"/></svg><span>Developer servers</span></div>
+            <div style="--i: 1"><svg class="icon" aria-hidden="true"><use href="./assets/icons.svg#megaphone"/></svg><span>Ad networks</span></div>
+            <div style="--i: 2"><svg class="icon" aria-hidden="true"><use href="./assets/icons.svg#chart"/></svg><span>Analytics backends</span></div>
+          </div>
+        </div>
+        <div class="stats" data-stagger>
+          <div class="stat reveal"><strong><span class="odo"><span class="odo-strip"><span>9</span><span>8</span><span>7</span><span>6</span><span>5</span><span>4</span><span>3</span><span>2</span><span>1</span><span>0</span></span></span></strong><p>Ads shown in the app</p></div>
+          <div class="stat reveal"><strong><span class="odo"><span class="odo-strip"><span>9</span><span>8</span><span>7</span><span>6</span><span>5</span><span>4</span><span>3</span><span>2</span><span>1</span><span>0</span></span></span></strong><p>Tracking SDKs included</p></div>
+          <div class="stat reveal"><strong><span class="odo"><span class="odo-strip"><span>9</span><span>8</span><span>7</span><span>6</span><span>5</span><span>4</span><span>3</span><span>2</span><span>1</span><span>0</span></span></span></strong><p>Developer accounts to create</p></div>
+        </div>
+      </section>
+
+      <section class="wrap section" aria-labelledby="help-title" style="padding-top: 0">
+        <div class="section-head reveal">
+          <span class="kicker">Support</span>
+          <h2 id="help-title" data-words>Everything in one place.</h2>
+        </div>
+        <div class="bento tilt-group" data-stagger>
+          <a class="tile big reveal tilt glow-border" data-tilt="4" href="./privacy/">
+            <span class="t-icon"><svg class="icon" aria-hidden="true"><use href="./assets/icons.svg#shield"/></svg></span>
+            <h3>Privacy Policy</h3>
+            <p>Review how SpendCue handles local finance records, iCloud sync, notifications, purchases, and AI insights.</p>
+            <ul class="toc-preview" aria-label="Topics covered">
+              <li style="--i: 0">Storage</li>
+              <li style="--i: 1">iCloud sync</li>
+              <li style="--i: 2">Notifications</li>
+              <li style="--i: 3">Purchases</li>
+              <li style="--i: 4">AI insights</li>
+              <li style="--i: 5">Exports</li>
+              <li style="--i: 6">Deleting data</li>
+            </ul>
+            <span class="go">Open privacy policy <svg class="icon arrow" aria-hidden="true"><use href="./assets/icons.svg#arrow"/></svg></span>
+          </a>
+          <a class="tile reveal tilt glow-border" data-tilt="5" href="./terms/">
+            <span class="t-icon"><svg class="icon" aria-hidden="true"><use href="./assets/icons.svg#doc"/></svg></span>
+            <h3>Terms of Use</h3>
+            <p>SpendCue uses Apple’s standard end user license agreement. Read the plain-language summary.</p>
+            <span class="go">View terms <svg class="icon arrow" aria-hidden="true"><use href="./assets/icons.svg#arrow"/></svg></span>
+          </a>
+          <div class="tile reveal tilt glow-border" data-tilt="5">
+            <span class="t-icon"><svg class="icon" aria-hidden="true"><use href="./assets/icons.svg#help"/></svg></span>
+            <h3>Help</h3>
+            <p>For app support or privacy questions, email the developer.</p>
+            <div class="email-row">
+              <a class="go" href="mailto:spendcueapp@gmail.com">spendcueapp@gmail.com</a>
+              <button class="copy-btn" type="button" data-copy="spendcueapp@gmail.com">
+                <svg class="icon copy" aria-hidden="true"><use href="./assets/icons.svg#copy"/></svg>
+                <svg class="icon check" aria-hidden="true"><use href="./assets/icons.svg#check"/></svg>
+                Copy
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="wrap section" style="padding-top: 0">
+        <div class="cta reveal">
+          <div>
+            <h2>Questions about your data?</h2>
+            <p>Email the developer directly. Please don’t include payment-card details or private financial records.</p>
+          </div>
+          <a class="btn magnetic" data-magnet="0.35" href="mailto:spendcueapp@gmail.com">Email support <svg class="icon arrow" aria-hidden="true"><use href="./assets/icons.svg#arrow"/></svg></a>
+        </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <span>&copy; 2026 Mahmoud Gamal. All rights reserved.</span>
-      <span>SpendCue for iOS</span>
+      <span class="footer-mark reveal" aria-hidden="true" data-letters>SpendCue</span>
+      <div class="wrap">
+        <span>&copy; 2026 Mahmoud Gamal. All rights reserved.</span>
+        <nav class="foot-links" aria-label="Footer">
+          <a href="./privacy/">Privacy Policy</a>
+          <a href="./terms/">Terms of Use</a>
+          <a href="mailto:spendcueapp@gmail.com">Support</a>
+          <a href="./ar/" lang="ar" hreflang="ar">العربية</a>
+        </nav>
+      </div>
     </footer>
+
+    <div class="toast" role="status" aria-live="polite"><svg class="icon" aria-hidden="true"><use href="./assets/icons.svg#check"/></svg>Email copied</div>
   </body>
 </html>
