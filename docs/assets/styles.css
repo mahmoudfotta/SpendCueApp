@@ -1605,26 +1605,30 @@ html.js [data-words].in .w {
 
 .notifs {
   position: absolute;
-  top: 6.4%;
+  top: 6.2%;
   right: 3.5%;
   left: 3.5%;
   z-index: 3;
-  height: calc(var(--pw) * 0.19);
+  height: calc(var(--pw) * 0.215);
 }
 
+/* iOS-style banner: icon · [title …… now] / body */
 .notif {
   position: absolute;
   inset: 0;
   display: flex;
   align-items: center;
-  gap: 7px;
-  padding: 0 9px;
-  border-radius: calc(var(--pw) * 0.07);
-  background: rgba(250, 252, 249, 0.8);
+  gap: calc(var(--pw) * 0.034);
+  padding: 0 calc(var(--pw) * 0.042);
+  border-radius: calc(var(--pw) * 0.075);
+  background: rgba(250, 252, 249, 0.84);
   color: #101d16;
   box-shadow: 0 10px 30px -8px rgba(16, 29, 22, 0.35);
-  backdrop-filter: blur(16px) saturate(170%);
-  -webkit-backdrop-filter: blur(16px) saturate(170%);
+  backdrop-filter: blur(18px) saturate(170%);
+  -webkit-backdrop-filter: blur(18px) saturate(170%);
+  font-size: calc(var(--pw) * 0.041);
+  line-height: 1.28;
+  text-align: start;
   opacity: 0;
   transform: translateY(-120%) scale(0.92);
   transition: opacity 0.5s var(--ease-out), transform 0.7s var(--spring);
@@ -1643,9 +1647,9 @@ html.js [data-words].in .w {
 
 .phone-screen .notif img {
   flex: none;
-  width: calc(var(--pw) * 0.1);
-  height: calc(var(--pw) * 0.1);
-  border-radius: 22%;
+  width: calc(var(--pw) * 0.112);
+  height: calc(var(--pw) * 0.112);
+  border-radius: 23%;
   object-fit: cover;
 }
 
@@ -1654,43 +1658,51 @@ html.js [data-words].in .w {
   min-width: 0;
 }
 
+.notif .nt {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
 .notif b,
 .notif small {
-  display: block;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
 
 .notif b {
-  font-size: 9.5px;
-  line-height: 1.25;
+  flex: 1;
+  min-width: 0;
+  font-weight: 650;
 }
 
 .notif small {
-  color: #66736b;
-  font-size: 8.5px;
-  line-height: 1.25;
+  display: block;
+  color: #4e5a53;
+  font-size: 1em;
+}
+
+.notif time {
+  flex: none;
+  color: #7c8882;
+  font-size: 0.86em;
 }
 
 @media (prefers-color-scheme: dark) {
   .notif {
-    background: rgba(44, 50, 47, 0.82);
+    background: rgba(44, 50, 47, 0.86);
     color: #f2f5f2;
     box-shadow: 0 10px 30px -8px rgba(0, 0, 0, 0.6), inset 0 0 0 0.5px rgba(255, 255, 255, 0.12);
   }
 
-  .notif small,
-  .notif time {
-    color: #a9b3ad;
+  .notif small {
+    color: #c3ccc6;
   }
-}
 
-.notif time {
-  align-self: flex-start;
-  margin-top: calc(var(--pw) * 0.035);
-  color: #8a958f;
-  font-size: 8px;
+  .notif time {
+    color: #95a09a;
+  }
 }
 
 @supports (animation-timeline: view()) {
