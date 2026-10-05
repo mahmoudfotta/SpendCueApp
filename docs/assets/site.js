@@ -111,25 +111,36 @@
   const countUp = (el) => {
     const target = parseFloat(el.dataset.count);
     const decimals = (el.dataset.count.split(".")[1] || "").length;
-    const fmt = new Intl.NumberFormat("en-US", {
+    const fmt = new Intl.NumberFormat(el.dataset.locale || "en-US", {
       minimumFractionDigits: decimals,
       maximumFractionDigits: decimals,
     });
     const prefix = el.dataset.prefix || "";
+    const suffix = el.dataset.suffix || "";
     if (reduceMotion) {
-      el.textContent = prefix + fmt.format(target);
+      el.textContent = prefix + fmt.format(target) + suffix;
       return;
     }
     const start = performance.now();
     const tick = (now) => {
       const t = Math.min((now - start) / 1600, 1);
-      el.textContent = prefix + fmt.format(target * (1 - Math.pow(1 - t, 4)));
+      el.textContent = prefix + fmt.format(target * (1 - Math.pow(1 - t, 4))) + suffix;
       if (t < 1) requestAnimationFrame(tick);
     };
     requestAnimationFrame(tick);
   };
   $$("[data-count]").forEach((el) => {
-    setTimeout(() => countUp(el), parseInt(el.dataset.delay || "0", 10));
+    const delay = parseInt(el.dataset.delay || "0", 10);
+    if (el.hasAttribute("data-on-view") && "IntersectionObserver" in window) {
+      const once = new IntersectionObserver(([entry]) => {
+        if (!entry.isIntersecting) return;
+        once.disconnect();
+        setTimeout(() => countUp(el), delay);
+      }, { threshold: 0.4 });
+      once.observe(el);
+    } else {
+      setTimeout(() => countUp(el), delay);
+    }
   });
 
   /* ------------------------------------------------------------------
@@ -139,6 +150,17 @@
     const words = $$(".hl", rot);
     if (words.length < 2 || reduceMotion) return;
     let index = 0;
+    // Size the slot to the visible word so centred and RTL layouts don't leave a gap.
+    const fit = () => {
+      rot.style.width = `${words[index].getBoundingClientRect().width}px`;
+    };
+    fit();
+    window.addEventListener("resize", () => {
+      rot.style.transition = "none";
+      fit();
+      requestAnimationFrame(() => (rot.style.transition = ""));
+    });
+    if (document.fonts) document.fonts.ready.then(fit);
     setInterval(() => {
       if (document.hidden) return;
       const prev = words[index];
@@ -148,6 +170,7 @@
       prev.classList.add("out");
       next.classList.remove("out");
       next.classList.add("on");
+      fit();
       setTimeout(() => prev.classList.remove("out"), 800);
     }, 2600);
   });
@@ -281,25 +304,99 @@
       });
     });
 
-    // Device tilts toward the pointer.
-    const stage = document.querySelector(".stage");
-    const device = document.querySelector(".device");
-    if (stage && device) {
+    // Phone fan follows the pointer.
+    const showcase = document.querySelector(".showcase");
+    if (showcase) {
       let frame = 0;
-      stage.addEventListener("pointermove", (e) => {
+      showcase.addEventListener("pointermove", (e) => {
         cancelAnimationFrame(frame);
         frame = requestAnimationFrame(() => {
-          const r = stage.getBoundingClientRect();
-          const x = (e.clientX - r.left) / r.width - 0.5;
-          const y = (e.clientY - r.top) / r.height - 0.5;
-          device.style.setProperty("--ry", `${x * 18}deg`);
-          device.style.setProperty("--rx", `${-y * 12}deg`);
+          const r = showcase.getBoundingClientRect();
+          showcase.style.setProperty("--px", ((e.clientX - r.left) / r.width - 0.5).toFixed(3));
+          showcase.style.setProperty("--py", ((e.clientY - r.top) / r.height - 0.5).toFixed(3));
         });
       });
-      stage.addEventListener("pointerleave", () => {
-        device.style.setProperty("--ry", "0deg");
-        device.style.setProperty("--rx", "0deg");
+      showcase.addEventListener("pointerleave", () => {
+        showcase.style.setProperty("--px", 0);
+        showcase.style.setProperty("--py", 0);
       });
+    }
+  }
+
+  /* ------------------------------------------------------------------
+     Feature tour: the step nearest the viewport centre drives the phone
+     ------------------------------------------------------------------ */
+  const tour = document.querySelector(".tour");
+  if (tour) {
+    const steps = $$(".step", tour);
+    const shots = $$(".tour-stage .shot", tour);
+    const count = tour.querySelector(".tour-count b");
+    const rail = tour.querySelector(".tour-steps");
+    let current = -1;
+    const setStep = (i) => {
+      if (i === current) return;
+      current = i;
+      tour.dataset.step = i + 1;
+      steps.forEach((s, k) => s.classList.toggle("active", k === i));
+      shots.forEach((s, k) => {
+        s.classList.toggle("active", k === i);
+        s.classList.toggle("past", k < i);
+      });
+      if (count) {
+        count.textContent = String(i + 1).padStart(2, "0");
+        count.classList.remove("tick");
+        void count.offsetWidth;
+        count.classList.add("tick");
+      }
+    };
+    let ticking = false;
+    const update = () => {
+      ticking = false;
+      const mid = window.innerHeight / 2;
+      let best = 0;
+      let bestDistance = Infinity;
+      steps.forEach((s, k) => {
+        const r = s.getBoundingClientRect();
+        const d = Math.abs(r.top + r.height / 2 - mid);
+        if (d < bestDistance) {
+          bestDistance = d;
+          best = k;
+        }
+      });
+      setStep(best);
+      const r = rail.getBoundingClientRect();
+      tour.style.setProperty("--tp", clamp((mid - r.top) / r.height, 0, 1).toFixed(3));
+    };
+    window.addEventListener("scroll", () => {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(update);
+      }
+    }, { passive: true });
+    window.addEventListener("resize", update);
+    update();
+  }
+
+  /* ------------------------------------------------------------------
+     Sticky GET bar: shows once the hero download button scrolls away,
+     hides again when the final download panel is on screen
+     ------------------------------------------------------------------ */
+  const getbar = document.querySelector(".getbar");
+  const heroCta = document.querySelector(".hero .store-btn");
+  if (getbar && heroCta && "IntersectionObserver" in window) {
+    const finale = document.querySelector(".download");
+    let heroGone = false;
+    let finaleIn = false;
+    const sync = () => getbar.classList.toggle("show", heroGone && !finaleIn);
+    new IntersectionObserver(([entry]) => {
+      heroGone = !entry.isIntersecting && entry.boundingClientRect.top < 0;
+      sync();
+    }).observe(heroCta);
+    if (finale) {
+      new IntersectionObserver(([entry]) => {
+        finaleIn = entry.isIntersecting;
+        sync();
+      }).observe(finale);
     }
   }
 
@@ -370,6 +467,19 @@
     });
     update();
   }
+
+  /* Language menu: close on outside click or Escape. */
+  $$(".lang-menu").forEach((menu) => {
+    document.addEventListener("click", (e) => {
+      if (menu.open && !menu.contains(e.target)) menu.open = false;
+    });
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && menu.open) {
+        menu.open = false;
+        menu.querySelector("summary").focus();
+      }
+    });
+  });
 
   /* ------------------------------------------------------------------
      Copy email to clipboard with a toast
